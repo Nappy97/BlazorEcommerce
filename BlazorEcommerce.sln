@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorEcommerce.Server", "BlazorEcommerce\Server\BlazorEcommerce.Server.csproj", "{4A787573-2ED5-4955-A126-B718F12AFB8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorEcommerce.Client", "BlazorEcommerce\Client\BlazorEcommerce.Client.csproj", "{BDE1E69B-BEE9-4AF8-8CAD-22DCA1BDCFB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorEcommerce.Shared", "BlazorEcommerce\Shared\BlazorEcommerce.Shared.csproj", "{D2F25865-D60E-4DA5-AB6D-1BB9711615AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A787573-2ED5-4955-A126-B718F12AFB8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A787573-2ED5-4955-A126-B718F12AFB8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A787573-2ED5-4955-A126-B718F12AFB8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A787573-2ED5-4955-A126-B718F12AFB8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDE1E69B-BEE9-4AF8-8CAD-22DCA1BDCFB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDE1E69B-BEE9-4AF8-8CAD-22DCA1BDCFB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDE1E69B-BEE9-4AF8-8CAD-22DCA1BDCFB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDE1E69B-BEE9-4AF8-8CAD-22DCA1BDCFB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2F25865-D60E-4DA5-AB6D-1BB9711615AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2F25865-D60E-4DA5-AB6D-1BB9711615AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2F25865-D60E-4DA5-AB6D-1BB9711615AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2F25865-D60E-4DA5-AB6D-1BB9711615AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
