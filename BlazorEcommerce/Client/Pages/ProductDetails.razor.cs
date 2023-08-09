@@ -8,6 +8,7 @@ public partial class ProductDetails
 
     private Product? product = null;
     private string message = string.Empty;
+    private int currentTypeId = 1;
 
     [Parameter] public int Id { get; set; }
 
@@ -22,6 +23,16 @@ public partial class ProductDetails
         else
         {
             product = result.Data;
+            if (product is { Variants.Count: > 0 })
+            {
+                currentTypeId = product.Variants[0].ProductTypeId;
+            }
         }
+    }
+
+    private ProductVariant GetSelectVariant()
+    {
+        var variant = product.Variants.FirstOrDefault(v => v.ProductTypeId == currentTypeId);
+        return variant;
     }
 }

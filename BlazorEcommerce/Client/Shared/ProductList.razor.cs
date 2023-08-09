@@ -4,12 +4,34 @@ using Microsoft.AspNetCore.Components;
 
 namespace BlazorEcommerce.Client.Shared;
 
-public partial class ProductList
+public partial class ProductList : IDisposable
 {
     [Inject] private IProductService _productService { get; set; }
-    
-    protected override async Task OnInitializedAsync()
+
+    protected override void OnInitialized()
     {
-        await _productService.GetProducts();
+        _productService.ProductChanged += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        _productService.ProductChanged -= StateHasChanged;
+    }
+
+    private string GetPriceText(Product product)
+    {
+        var variants = product.Variants;
+        switch (variants.Count)
+        {
+            case 0:
+                return string.Empty;
+            case 1:
+                return $"${variants[0].Price}";
+            default:
+            {
+                var minPrice = variants.Min(v => v.Price);
+                return $"Starting at ${minPrice}";
+            }
+        }
     }
 }

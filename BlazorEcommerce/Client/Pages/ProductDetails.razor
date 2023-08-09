@@ -13,9 +13,20 @@ else
         <div class="media-body">
             <h2 class="mb-0">@product.Title</h2>
             <p>@product.Description</p>
-            <h4 class="price">
-                $@product.Price
-            </h4>
+            @if (GetSelectVariant() != null)
+            {
+                if (GetSelectVariant().OriginalPrice > GetSelectVariant().Price)
+                {
+                    <h6 class="text-muted original-price">
+                        $@GetSelectVariant().OriginalPrice
+                    </h6>
+                }
+                <h4 class="price">
+                    $@GetSelectVariant().Price
+                </h4>
+            }
+
+
         </div>
     </div>
 }
