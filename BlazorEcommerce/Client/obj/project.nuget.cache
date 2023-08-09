@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "CPqWRnGv7Jh7mapdo2V1ILRTSFVXc78RgmxVHENe8i7o3k92pbPpAB4kqH703HQ4iSr7B9WZjazxrUepX/9Ekw==",
+  "dgSpecHash": "C1uYURbrymxRxoH2SqqUIklNDQ1goWV4Z8ElDJebr5CaqFUGdHeh1U5eCofKdQGSm56a+rAwYyyw3YkA++Lvdg==",
   "success": true,
   "projectFilePath": "D:\\side_project\\Csharp\\BlazorWebAssembly\\BlazorEcommerce\\BlazorEcommerce\\BlazorEcommerce\\Client\\BlazorEcommerce.Client.csproj",
   "expectedPackageFiles": [
@@ -30,7 +30,8 @@
     "C:\\Users\\wjddm\\.nuget\\packages\\microsoft.jsinterop.webassembly\\7.0.9\\microsoft.jsinterop.webassembly.7.0.9.nupkg.sha512",
     "C:\\Users\\wjddm\\.nuget\\packages\\system.io.pipelines\\7.0.0\\system.io.pipelines.7.0.0.nupkg.sha512",
     "C:\\Users\\wjddm\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
-    "C:\\Users\\wjddm\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512"
+    "C:\\Users\\wjddm\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",
+    "C:\\Users\\wjddm\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\7.0.10\\microsoft.netcore.app.runtime.mono.browser-wasm.7.0.10.nupkg.sha512"
   ],
   "logs": []
 }

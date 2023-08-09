@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "4gobYYMGAH/rAd+PrzX45EzZFHmZ5OqoH7xFwHlZOzGQK4C7XBsxxMSnkKtjto+d0ciOIm469exwZChZCbaIxg==",
+  "dgSpecHash": "K1Kx9bialQDW/O6pxTMgPFEbNHC8Rp5Us40S5E/RwMtVsEn6gQpRotKikdHTG5Dxb4jqEwfWL+QhlNtkADfKkw==",
   "success": true,
   "projectFilePath": "D:\\side_project\\Csharp\\BlazorWebAssembly\\BlazorEcommerce\\BlazorEcommerce\\BlazorEcommerce\\Server\\BlazorEcommerce.Server.csproj",
   "expectedPackageFiles": [
