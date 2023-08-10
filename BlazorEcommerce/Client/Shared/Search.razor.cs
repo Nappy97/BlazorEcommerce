@@ -22,7 +22,7 @@ public partial class Search
 
     public void SearchProducts()
     {
-        NavigationManager.NavigateTo($"search/{SearchText}");
+        NavigationManager.NavigateTo($"search/{SearchText}/1");
     }
 
     public async Task HandleSearch(KeyboardEventArgs args)
