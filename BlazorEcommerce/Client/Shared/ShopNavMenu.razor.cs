@@ -2,7 +2,7 @@
 
 namespace BlazorEcommerce.Client.Shared;
 
-public partial class NavMenu
+public partial class ShopNavMenu
 {
     [Inject] private ICategoryService CategoryService { get; set; }
     
