@@ -30,6 +30,12 @@
         height: auto;
     }
 }
+/* /Shared/HomeButton.razor.rz.scp.css */
+.home-button[b-bhpobyacx5] {
+    white-space: nowrap;
+    margin-right: 10px;
+    transform: rotate(-5deg);
+}
 /* /Shared/ProductList.razor.rz.scp.css */
 .media-img[b-fx5atut3jr] {
     max-height: 200px;

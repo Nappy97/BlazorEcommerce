@@ -836,3 +836,4 @@ D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorE
 D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\obj\Debug\net7.0\scopedcss\Pages\ProductDetails.razor.rz.scp.css
 D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\obj\Debug\net7.0\scopedcss\Shared\ShopLayout.razor.rz.scp.css
 D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\obj\Debug\net7.0\scopedcss\Shared\ShopNavMenu.razor.rz.scp.css
+D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\obj\Debug\net7.0\scopedcss\Shared\HomeButton.razor.rz.scp.css

@@ -16,3 +16,10 @@ builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 
 await builder.Build().RunAsync();
+
+
+
+
+
+
+
