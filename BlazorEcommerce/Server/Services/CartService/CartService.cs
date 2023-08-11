@@ -14,6 +14,7 @@ public class CartService : ICartService
         _context = context;
     }
 
+    // 카트에 담긴것 정보얻기(로컬 스토리지)
     public async Task<ServiceResponse<List<CartProductResponseDto>>> GetCartProducts(List<CartItem> cartItems)
     {
         var result = new ServiceResponse<List<CartProductResponseDto>>
@@ -58,5 +59,19 @@ public class CartService : ICartService
         }
 
         return result;
+    }
+
+    // 카트에 담긴것 정보얻기(회원)
+    public async Task<ServiceResponse<List<CartProductResponseDto>>> StoreCartItems(List<CartItem> cartItems,
+        int userId)
+    {
+        cartItems.ForEach(cartItem => cartItem.UserId = userId);
+        _context.CartItems.AddRange(cartItems);
+        await _context.SaveChangesAsync();
+
+        return await GetCartProducts(
+            await _context.CartItems
+                .Where(ci => ci.UserId == userId)
+                .ToListAsync());
     }
 }

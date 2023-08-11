@@ -7,5 +7,9 @@ namespace BlazorEcommerce.Server.Services.CartService;
 
 public interface ICartService
 {
+    // 카트에 담긴것 정보얻기(로컬 스토리지)
     Task<ServiceResponse<List<CartProductResponseDto>>> GetCartProducts(List<CartItem> cartItems);
+
+    // 카트에 담긴것 정보얻기(회원)
+    Task<ServiceResponse<List<CartProductResponseDto>>> StoreCartItems(List<CartItem> cartItems, int userId);
 }

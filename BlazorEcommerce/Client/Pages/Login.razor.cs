@@ -10,6 +10,7 @@ public partial class Login
     [Inject] private ILocalStorageService LocalStorage { get; set; }
     [Inject] private NavigationManager NavigationManager { get; set; }
     [Inject] private AuthenticationStateProvider AuthenticationStateProvider { get; set; }
+    [Inject] private ICartService CartService { get; set; }
 
     private UserLogin _user = new();
 
@@ -35,6 +36,7 @@ public partial class Login
             await LocalStorage.SetItemAsync("authToken", result.Data);
             Console.WriteLine(await LocalStorage.GetItemAsync<string>("authToken"));
             await AuthenticationStateProvider.GetAuthenticationStateAsync();
+            await CartService.StoreCartItems(true);
             NavigationManager.NavigateTo(_returnUrl);
         }
         else
