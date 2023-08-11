@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using BlazorEcommerce.Client.Services.CartService;
+using Microsoft.AspNetCore.Components;
 
 namespace BlazorEcommerce.Client.Pages;
 
 public partial class ProductDetails
 {
     [Inject] private IProductService ProductService { get; set; }
+    [Inject] private ICartService CartService { get; set; }
 
     private Product? product = null;
     private string message = string.Empty;
@@ -34,5 +36,17 @@ public partial class ProductDetails
     {
         var variant = product.Variants.FirstOrDefault(v => v.ProductTypeId == currentTypeId);
         return variant;
+    }
+
+    private async Task AddToCart()
+    {
+        var productVariant = GetSelectVariant();
+        var cartItem = new CartItem()
+        {
+            ProductId = productVariant.ProductId,
+            ProductTypeId = productVariant.ProductTypeId
+        };
+
+        await CartService.AddToCart(cartItem);
     }
 }

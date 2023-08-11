@@ -1,0 +1,40 @@
+﻿@page "/Cart"
+
+<PageTitle>Shopping Cart</PageTitle>
+
+<h3>Shopping Cart</h3>
+
+@if (_cartProducts == null || _cartProducts.Count == 0)
+{
+    <span>@_message</span>
+}
+else
+{
+    <div>
+        @foreach (var product in _cartProducts)
+        {
+            <div class="container">
+                <div class="image-wrapper">
+                    <img src="@product.ImageUrl" class="image"/>
+                </div>
+                <div class="name">
+                    <h5>
+                        <a href="/product/@product.ProductId">@product.Title</a>
+                    </h5>
+                    <span>@product.ProductType</span><br/>
+                    <input type="number" value="@product.Quantity"
+                           @onchange="@(e => UpdateQuantity(e, product))"
+                           class="form-control input-quantity"
+                           min="1"/>
+                    <button class="btn-delete" @onclick="@(() => RemoveProductFromCart(product.ProductId, product.ProductTypeId))">
+                        Delete
+                    </button>
+                </div>
+                <div class="cart-product-price">$@(product.Price * product.Quantity)</div>
+            </div>
+        }
+        <div class="cart-product-price">
+            Total (@_cartProducts.Count): $@_cartProducts.Sum(product => product.Price * product.Quantity)
+        </div>
+    </div>
+}

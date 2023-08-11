@@ -54,7 +54,7 @@ public class ProductService : IProductService
         return response;
     }
 
-    public async Task<ServiceResponse<ProductsSearchResultDTO>> SearchProducts(string searchText, int page)
+    public async Task<ServiceResponse<ProductsSearchResultDto>> SearchProducts(string searchText, int page)
     {
         var pageResults = 2f;
         var pageCount = Math.Ceiling((await FindProductBySearchText(searchText)).Count / pageResults);
@@ -67,9 +67,9 @@ public class ProductService : IProductService
             .Take((int)pageResults)
             .ToListAsync();
 
-        var response = new ServiceResponse<ProductsSearchResultDTO>
+        var response = new ServiceResponse<ProductsSearchResultDto>
         {
-            Data = new ProductsSearchResultDTO
+            Data = new ProductsSearchResultDto
             {
                 Products = products,
                 CurrentPage = page,

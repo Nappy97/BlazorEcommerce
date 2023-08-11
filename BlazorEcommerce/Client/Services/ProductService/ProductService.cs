@@ -52,7 +52,7 @@ public class ProductService : IProductService
     {
         LastSearchText = searchText;
         var result = await _http
-            .GetFromJsonAsync<ServiceResponse<ProductsSearchResultDTO>>($"api/product/search/{searchText}/{page}");
+            .GetFromJsonAsync<ServiceResponse<ProductsSearchResultDto>>($"api/product/search/{searchText}/{page}");
         if (result is { Data: not null })
         {
             Products = result.Data.Products;

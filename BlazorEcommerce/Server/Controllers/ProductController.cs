@@ -37,7 +37,7 @@ public class ProductController : ControllerBase
     }
 
     [HttpGet("search/{searchText}/{page:int}")]
-    public async Task<ActionResult<ServiceResponse<ProductsSearchResultDTO>>> SearchProducts(string searchText,
+    public async Task<ActionResult<ServiceResponse<ProductsSearchResultDto>>> SearchProducts(string searchText,
         int page)
     {
         var result = await _productService.SearchProducts(searchText, page);

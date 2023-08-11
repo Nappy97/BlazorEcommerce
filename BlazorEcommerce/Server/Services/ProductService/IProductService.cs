@@ -8,7 +8,7 @@ public interface IProductService
 
     Task<ServiceResponse<List<Product>>> GetProductByCategory(string categoryUrl);
 
-    Task<ServiceResponse<ProductsSearchResultDTO>> SearchProducts(string searchText, int page);
+    Task<ServiceResponse<ProductsSearchResultDto>> SearchProducts(string searchText, int page);
 
     Task<ServiceResponse<List<string>>> GetProductSearchSuggestions(string searchText);
     

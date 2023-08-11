@@ -1,6 +1,6 @@
 ﻿namespace BlazorEcommerce.Shared;
 
-public class ProductsSearchResultDTO
+public class ProductsSearchResultDto
 {
     public List<Product> Products { get; set; } = new();
     
