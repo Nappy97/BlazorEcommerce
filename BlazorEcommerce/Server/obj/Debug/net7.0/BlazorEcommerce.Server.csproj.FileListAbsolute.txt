@@ -103,3 +103,4 @@ D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorE
 D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Server\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Server\bin\Debug\net7.0\Blazored.LocalStorage.dll
 D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Server\bin\Debug\net7.0\Microsoft.AspNetCore.Components.Authorization.dll
+D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Server\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

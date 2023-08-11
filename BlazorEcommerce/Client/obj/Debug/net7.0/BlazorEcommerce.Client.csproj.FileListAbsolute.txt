@@ -848,3 +848,11 @@ D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorE
 D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\bin\Debug\net7.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Authorization.dll.gz
 D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\bin\Debug\net7.0\Microsoft.AspNetCore.Components.Authorization.dll
 D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\obj\Debug\net7.0\build-gz\VS9Ghchg.gz
+D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\bin\Debug\net7.0\wwwroot\_framework\Microsoft.AspNetCore.WebUtilities.dll
+D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\bin\Debug\net7.0\wwwroot\_framework\Microsoft.Net.Http.Headers.dll
+D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\bin\Debug\net7.0\wwwroot\_framework\Microsoft.AspNetCore.WebUtilities.dll.gz
+D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\bin\Debug\net7.0\wwwroot\_framework\Microsoft.Net.Http.Headers.dll.gz
+D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\bin\Debug\net7.0\Microsoft.AspNetCore.WebUtilities.dll
+D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\bin\Debug\net7.0\Microsoft.Net.Http.Headers.dll
+D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\obj\Debug\net7.0\build-gz\GGHiLMgQ.gz
+D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\obj\Debug\net7.0\build-gz\SiQ1rJEX.gz

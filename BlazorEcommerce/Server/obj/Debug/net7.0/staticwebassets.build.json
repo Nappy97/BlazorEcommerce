@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "r3e80WS89V7Kp5q1VqPd6PInHhUJ3ntp5Nolklhr8hc=",
+  "Hash": "ldGqVIogAJUO8eq1NFREHIimuFax85BnH3W7uNmVkPo=",
   "Source": "BlazorEcommerce.Server",
   "BasePath": "_content/BlazorEcommerce.Server",
   "Mode": "Default",
@@ -386,6 +386,23 @@
       "OriginalItemSpec": "C:\\Users\\wjddm\\.nuget\\packages\\microsoft.aspnetcore.metadata\\7.0.9\\lib\\net7.0\\Microsoft.AspNetCore.Metadata.dll"
     },
     {
+      "Identity": "D:\\side_project\\Csharp\\BlazorWebAssembly\\BlazorEcommerce\\BlazorEcommerce\\BlazorEcommerce\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.WebUtilities.dll",
+      "SourceId": "BlazorEcommerce.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\side_project\\Csharp\\BlazorWebAssembly\\BlazorEcommerce\\BlazorEcommerce\\BlazorEcommerce\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.WebUtilities.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\wjddm\\.nuget\\packages\\microsoft.aspnetcore.webutilities\\2.2.0\\lib\\netstandard2.0\\Microsoft.AspNetCore.WebUtilities.dll"
+    },
+    {
       "Identity": "D:\\side_project\\Csharp\\BlazorWebAssembly\\BlazorEcommerce\\BlazorEcommerce\\BlazorEcommerce\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.CSharp.dll",
       "SourceId": "BlazorEcommerce.Client",
       "SourceType": "Project",
@@ -673,6 +690,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\wjddm\\.nuget\\packages\\microsoft.jsinterop.webassembly\\7.0.9\\lib\\net7.0\\Microsoft.JSInterop.WebAssembly.dll"
+    },
+    {
+      "Identity": "D:\\side_project\\Csharp\\BlazorWebAssembly\\BlazorEcommerce\\BlazorEcommerce\\BlazorEcommerce\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.Net.Http.Headers.dll",
+      "SourceId": "BlazorEcommerce.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\side_project\\Csharp\\BlazorWebAssembly\\BlazorEcommerce\\BlazorEcommerce\\BlazorEcommerce\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Net.Http.Headers.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\wjddm\\.nuget\\packages\\microsoft.net.http.headers\\2.2.0\\lib\\netstandard2.0\\Microsoft.Net.Http.Headers.dll"
     },
     {
       "Identity": "D:\\side_project\\Csharp\\BlazorWebAssembly\\BlazorEcommerce\\BlazorEcommerce\\BlazorEcommerce\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.VisualBasic.Core.dll",
@@ -4789,6 +4823,23 @@
       "OriginalItemSpec": "D:\\side_project\\Csharp\\BlazorWebAssembly\\BlazorEcommerce\\BlazorEcommerce\\BlazorEcommerce\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.Runtime.CompilerServices.VisualC.dll"
     },
     {
+      "Identity": "D:\\side_project\\Csharp\\BlazorWebAssembly\\BlazorEcommerce\\BlazorEcommerce\\BlazorEcommerce\\Client\\obj\\Debug\\net7.0\\build-gz\\GGHiLMgQ.gz",
+      "SourceId": "BlazorEcommerce.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\side_project\\Csharp\\BlazorWebAssembly\\BlazorEcommerce\\BlazorEcommerce\\BlazorEcommerce\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.WebUtilities.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "D:\\side_project\\Csharp\\BlazorWebAssembly\\BlazorEcommerce\\BlazorEcommerce\\BlazorEcommerce\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.WebUtilities.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\side_project\\Csharp\\BlazorWebAssembly\\BlazorEcommerce\\BlazorEcommerce\\BlazorEcommerce\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.WebUtilities.dll"
+    },
+    {
       "Identity": "D:\\side_project\\Csharp\\BlazorWebAssembly\\BlazorEcommerce\\BlazorEcommerce\\BlazorEcommerce\\Client\\obj\\Debug\\net7.0\\build-gz\\GJJIBJSL.gz",
       "SourceId": "BlazorEcommerce.Client",
       "SourceType": "Project",
@@ -6147,6 +6198,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\side_project\\Csharp\\BlazorWebAssembly\\BlazorEcommerce\\BlazorEcommerce\\BlazorEcommerce\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.Security.Principal.dll"
+    },
+    {
+      "Identity": "D:\\side_project\\Csharp\\BlazorWebAssembly\\BlazorEcommerce\\BlazorEcommerce\\BlazorEcommerce\\Client\\obj\\Debug\\net7.0\\build-gz\\SiQ1rJEX.gz",
+      "SourceId": "BlazorEcommerce.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\side_project\\Csharp\\BlazorWebAssembly\\BlazorEcommerce\\BlazorEcommerce\\BlazorEcommerce\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Net.Http.Headers.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "D:\\side_project\\Csharp\\BlazorWebAssembly\\BlazorEcommerce\\BlazorEcommerce\\BlazorEcommerce\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.Net.Http.Headers.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\side_project\\Csharp\\BlazorWebAssembly\\BlazorEcommerce\\BlazorEcommerce\\BlazorEcommerce\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.Net.Http.Headers.dll"
     },
     {
       "Identity": "D:\\side_project\\Csharp\\BlazorWebAssembly\\BlazorEcommerce\\BlazorEcommerce\\BlazorEcommerce\\Client\\obj\\Debug\\net7.0\\build-gz\\sJTYq2pF.gz",

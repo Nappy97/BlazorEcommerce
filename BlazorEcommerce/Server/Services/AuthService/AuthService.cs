@@ -72,6 +72,32 @@ public class AuthService : IAuthService
         return response;
     }
 
+    public async Task<ServiceResponse<bool>> ChangePassword(int userId, string newPassword)
+    {
+        var user = await _context.Users.FindAsync(userId);
+        if (user == null)
+        {
+            return new ServiceResponse<bool>
+            {
+                Success = false,
+                Message = "없는 유저입니다."
+            };
+        }
+
+        CreatePasswordHash(newPassword, out var passwordHash, out var passwordSalt);
+
+        user.PasswordHash = passwordHash;
+        user.PasswordSalt = passwordSalt;
+
+        await _context.SaveChangesAsync();
+
+        return new ServiceResponse<bool>
+        {
+            Data = true,
+            Message = "비밀번호 변경이 완료하였습니다."
+        };
+    }
+
     private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
     {
         using var hmac = new HMACSHA512();
