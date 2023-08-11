@@ -99,6 +99,18 @@
         }
       },
       "Microsoft.AspNetCore.Components.Analyzers/7.0.9": {},
+      "Microsoft.AspNetCore.Components.Authorization/7.0.9": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Authorization": "7.0.9",
+          "Microsoft.AspNetCore.Components": "7.0.9"
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.AspNetCore.Components.Authorization.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.923.32110"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Components.Forms/7.0.9": {
         "dependencies": {
           "Microsoft.AspNetCore.Components": "7.0.9"
@@ -838,6 +850,7 @@
         "dependencies": {
           "BlazorEcommerce.Shared": "1.0.0",
           "Blazored.LocalStorage": "4.3.0",
+          "Microsoft.AspNetCore.Components.Authorization": "7.0.9",
           "Microsoft.AspNetCore.Components.WebAssembly": "7.0.9"
         },
         "runtime": {
@@ -905,6 +918,13 @@
       "sha512": "sha512-Bk5COjKt1fMkOXjv82VCM83pGj47YkyHv3PZXDEMym0WVKhvNyiqAUd4nPdvqyxfldIhC0H6zyCPLAC0oLsZkA==",
       "path": "microsoft.aspnetcore.components.analyzers/7.0.9",
       "hashPath": "microsoft.aspnetcore.components.analyzers.7.0.9.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Components.Authorization/7.0.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0ngYBq/xBXt2d+JzVez2HBmrNTYNEstEb85AEPfeQHVRUcWS1mlCMP0s81RjOHAqGsw2D2aiuPTMFMFGbE7/dQ==",
+      "path": "microsoft.aspnetcore.components.authorization/7.0.9",
+      "hashPath": "microsoft.aspnetcore.components.authorization.7.0.9.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Components.Forms/7.0.9": {
       "type": "package",
