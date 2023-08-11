@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using BlazorEcommerce.Shared.Dto;
+using Microsoft.AspNetCore.Components;
 
 namespace BlazorEcommerce.Client.Pages;
 

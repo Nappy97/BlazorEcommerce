@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BlazorEcommerce.Shared.Model;
+using BlazorEcommerce.Shared.Model.Data;
+using BlazorEcommerce.Shared.Response;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BlazorEcommerce.Server.Controllers;
 

@@ -1,4 +1,6 @@
 ﻿using BlazorEcommerce.Client.Services.CartService;
+using BlazorEcommerce.Shared.Model;
+using BlazorEcommerce.Shared.Model.Internal;
 using Blazored.LocalStorage;
 using Microsoft.AspNetCore.Components;
 

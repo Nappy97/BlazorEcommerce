@@ -1,4 +1,4 @@
-﻿namespace BlazorEcommerce.Shared;
+﻿namespace BlazorEcommerce.Shared.Model.Data;
 
 public class Category
 {

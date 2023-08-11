@@ -1,5 +1,7 @@
 ﻿using System.Net.Http.Json;
 using BlazorEcommerce.Shared;
+using BlazorEcommerce.Shared.Model;
+using BlazorEcommerce.Shared.Model.Data;
 using Microsoft.AspNetCore.Components;
 
 namespace BlazorEcommerce.Client.Shared;

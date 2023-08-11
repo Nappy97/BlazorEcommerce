@@ -1,4 +1,7 @@
-﻿namespace BlazorEcommerce.Shared;
+﻿using BlazorEcommerce.Shared.Model;
+using BlazorEcommerce.Shared.Model.Data;
+
+namespace BlazorEcommerce.Shared.Dto;
 
 public class ProductsSearchResultDto
 {

@@ -1,4 +1,8 @@
-﻿namespace BlazorEcommerce.Client.Services.ProductService;
+﻿using BlazorEcommerce.Shared.Model;
+using BlazorEcommerce.Shared.Model.Data;
+using BlazorEcommerce.Shared.Response;
+
+namespace BlazorEcommerce.Client.Services.ProductService;
 
 public interface IProductService
 {

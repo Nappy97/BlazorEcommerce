@@ -1,4 +1,8 @@
-﻿using Blazored.LocalStorage;
+﻿using BlazorEcommerce.Shared.Dto;
+using BlazorEcommerce.Shared.Model;
+using BlazorEcommerce.Shared.Model.Internal;
+using BlazorEcommerce.Shared.Response;
+using Blazored.LocalStorage;
 
 namespace BlazorEcommerce.Client.Services.CartService;
 
