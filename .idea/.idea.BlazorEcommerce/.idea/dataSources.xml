@@ -8,5 +8,13 @@
       <jdbc-url>Server=EZPICLAPTOP\SQLEXPRESSLOCAL</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="blazorecommerce@localhost" uuid="2be37835-9535-4197-a2e7-8b6526114948">
+      <driver-ref>sqlserver.jb</driver-ref>
+      <synchronize>true</synchronize>
+      <configured-by-url>true</configured-by-url>
+      <jdbc-driver>com.jetbrains.jdbc.sqlserver.SqlServerDriver</jdbc-driver>
+      <jdbc-url>Server=localhost\SQLEXPRESSLOCAL;Database=blazorecommerce;Trusted_Connection=true;TrustServerCertificate=true;User Id=sa; Password=1234;</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

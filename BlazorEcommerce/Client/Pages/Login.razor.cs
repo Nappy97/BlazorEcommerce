@@ -37,6 +37,7 @@ public partial class Login
             Console.WriteLine(await LocalStorage.GetItemAsync<string>("authToken"));
             await AuthenticationStateProvider.GetAuthenticationStateAsync();
             await CartService.StoreCartItems(true);
+            await CartService.GetCartItemsCount();
             NavigationManager.NavigateTo(_returnUrl);
         }
         else

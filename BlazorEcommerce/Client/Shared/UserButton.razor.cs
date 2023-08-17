@@ -8,6 +8,7 @@ public partial class UserButton
     [Inject] private ILocalStorageService LocalStorage { get; set; }
     [Inject] private AuthenticationStateProvider AuthenticationStateProvider { get; set; }
     [Inject] private NavigationManager NavigationManager { get; set; }
+    [Inject] private ICartService CartService { get; set; }
 
     private bool _showUserMenu = false;
 
@@ -27,6 +28,7 @@ public partial class UserButton
     private async Task Logout()
     {
         await LocalStorage.RemoveItemAsync("authToken");
+        await CartService.GetCartItemsCount();
         await AuthenticationStateProvider.GetAuthenticationStateAsync();
         NavigationManager.NavigateTo("");
     }

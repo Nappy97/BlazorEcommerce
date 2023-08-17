@@ -11,5 +11,11 @@ public interface ICartService
     Task<ServiceResponse<List<CartProductResponseDto>>> GetCartProducts(List<CartItem> cartItems);
 
     // 카트에 담긴것 정보얻기(회원)
-    Task<ServiceResponse<List<CartProductResponseDto>>> StoreCartItems(List<CartItem> cartItems, int userId);
+    Task<ServiceResponse<List<CartProductResponseDto>>> StoreCartItems(List<CartItem> cartItems);
+    
+    // 카트에 담긴것 개수
+    Task<ServiceResponse<int>> GetCartItemCount();
+    
+    // 카트에 담긴것 정보얻기(회원) from DB
+    Task<ServiceResponse<List<CartProductResponseDto>>> GetDbCartProducts(); 
 }

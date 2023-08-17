@@ -10,3 +10,15 @@ D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorE
 D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Shared\obj\Debug\net7.0\refint\BlazorEcommerce.Shared.dll
 D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Shared\obj\Debug\net7.0\BlazorEcommerce.Shared.pdb
 D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Shared\obj\Debug\net7.0\ref\BlazorEcommerce.Shared.dll
+G:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Shared\bin\Debug\net7.0\BlazorEcommerce.Shared.deps.json
+G:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Shared\bin\Debug\net7.0\BlazorEcommerce.Shared.dll
+G:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Shared\bin\Debug\net7.0\BlazorEcommerce.Shared.pdb
+G:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Shared\obj\Debug\net7.0\BlazorEcommerce.Shared.csproj.AssemblyReference.cache
+G:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Shared\obj\Debug\net7.0\BlazorEcommerce.Shared.GeneratedMSBuildEditorConfig.editorconfig
+G:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Shared\obj\Debug\net7.0\BlazorEcommerce.Shared.AssemblyInfoInputs.cache
+G:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Shared\obj\Debug\net7.0\BlazorEcommerce.Shared.AssemblyInfo.cs
+G:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Shared\obj\Debug\net7.0\BlazorEcommerce.Shared.csproj.CoreCompileInputs.cache
+G:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Shared\obj\Debug\net7.0\BlazorEcommerce.Shared.dll
+G:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Shared\obj\Debug\net7.0\refint\BlazorEcommerce.Shared.dll
+G:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Shared\obj\Debug\net7.0\BlazorEcommerce.Shared.pdb
+G:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Shared\obj\Debug\net7.0\ref\BlazorEcommerce.Shared.dll

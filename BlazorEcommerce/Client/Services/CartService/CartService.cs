@@ -1,8 +1,4 @@
-﻿using BlazorEcommerce.Shared.Dto;
-using BlazorEcommerce.Shared.Model;
-using BlazorEcommerce.Shared.Model.Internal;
-using BlazorEcommerce.Shared.Response;
-using Blazored.LocalStorage;
+﻿using Blazored.LocalStorage;
 
 namespace BlazorEcommerce.Client.Services.CartService;
 
@@ -22,9 +18,10 @@ public class CartService : ICartService
 
     public event Action OnChange;
 
+    // 카트에 담기
     public async Task AddToCart(CartItem cartItem)
     {
-        if ((await _authStateProvider.GetAuthenticationStateAsync()).User.Identity.IsAuthenticated)
+        if (await IsUserAuthenticated())
         {
             Console.WriteLine("user is authenticated");
         }
@@ -51,29 +48,43 @@ public class CartService : ICartService
         }
 
         await _localStorage.SetItemAsync("cart", cart);
-        OnChange.Invoke();
+        await GetCartItemsCount();
     }
 
-    public async Task<List<CartItem>> GetCartItems()
-    {
-        var cart = await _localStorage.GetItemAsync<List<CartItem>>("cart");
-        if (cart == null)
-        {
-            cart = new List<CartItem>();
-        }
+    // 카트에 담긴것 정보얻기(로컬 스토리지)
+    // public async Task<List<CartItem>> GetCartItems()
+    // {
+    //     await GetCartItemsCount();
+    //     var cart = await _localStorage.GetItemAsync<List<CartItem>>("cart");
+    //     if (cart == null)
+    //     {
+    //         cart = new List<CartItem>();
+    //     }
+    //
+    //     return cart;
+    // }
 
-        return cart;
-    }
-
+    // 카트에 담긴것 정보얻기
     public async Task<List<CartProductResponseDto>> GetCartProducts()
     {
-        var cartItems = await _localStorage.GetItemAsync<List<CartItem>>("cart");
-        var response = await _http.PostAsJsonAsync("api/cart/products", cartItems);
-        var cartProducts =
-            await response.Content.ReadFromJsonAsync<ServiceResponse<List<CartProductResponseDto>>>();
-        return cartProducts.Data;
+        if (await IsUserAuthenticated())
+        {
+            var response = await _http.GetFromJsonAsync<ServiceResponse<List<CartProductResponseDto>>>("api/cart");
+            return response.Data;
+        }
+        else
+        {
+            var cartItems = await _localStorage.GetItemAsync<List<CartItem>>("cart");
+            if (cartItems == null)
+                return new List<CartProductResponseDto>();
+            var response = await _http.PostAsJsonAsync("api/cart/products", cartItems);
+            var cartProducts =
+                await response.Content.ReadFromJsonAsync<ServiceResponse<List<CartProductResponseDto>>>();
+            return cartProducts.Data;
+        }
     }
 
+    // 카트에서 상품제거
     public async Task RemoveProductFromCart(int productId, int productTypeId)
     {
         var cart = await _localStorage.GetItemAsync<List<CartItem>>("cart");
@@ -89,10 +100,11 @@ public class CartService : ICartService
         {
             cart.Remove(cartItem);
             await _localStorage.SetItemAsync("cart", cart);
-            OnChange.Invoke();
+            await GetCartItemsCount();
         }
     }
 
+    // 같은 상품일 경우 개수로 변경
     public async Task UpdateQuantity(CartProductResponseDto product)
     {
         var cart = await _localStorage.GetItemAsync<List<CartItem>>("cart");
@@ -111,6 +123,7 @@ public class CartService : ICartService
         }
     }
 
+    // 로컬스토리지 옮기기
     public async Task StoreCartItems(bool emptyLocalCart = false)
     {
         var localCart = await _localStorage.GetItemAsync<List<CartItem>>("cart");
@@ -125,5 +138,29 @@ public class CartService : ICartService
         {
             await _localStorage.RemoveItemAsync("cart");
         }
+    }
+
+    // 카트에 담긴것 개수
+    public async Task GetCartItemsCount()
+    {
+        if (await IsUserAuthenticated())
+        {
+            var result = await _http.GetFromJsonAsync<ServiceResponse<int>>("api/Cart/count");
+            var count = result.Data;
+
+            await _localStorage.SetItemAsync("cartItemsCount", count);
+        }
+        else
+        {
+            var cart = await _localStorage.GetItemAsync<List<CartItem>>("cart");
+            await _localStorage.SetItemAsync("cartItemsCount", cart?.Count ?? 0);
+        }
+
+        OnChange.Invoke();
+    }
+
+    private async Task<bool> IsUserAuthenticated()
+    {
+        return (await _authStateProvider.GetAuthenticationStateAsync()).User.Identity.IsAuthenticated;
     }
 }

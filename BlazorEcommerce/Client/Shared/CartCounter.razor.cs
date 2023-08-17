@@ -13,8 +13,8 @@ public partial class CartCounter : IDisposable
 
     private int GetCartItemsCount()
     {
-        var cart = LocalStorage.GetItem<List<CartItem>>("cart");
-        return cart?.Count ?? 0;
+        var count = LocalStorage.GetItem<int>("cartItemsCount");
+        return count;
     }
 
     protected override void OnInitialized()

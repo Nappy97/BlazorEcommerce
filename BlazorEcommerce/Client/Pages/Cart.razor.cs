@@ -20,18 +20,15 @@ public partial class Cart
         await CartService.RemoveProductFromCart(productId, productTypeId);
         await LoadCart();
     }
-    
+
 
     private async Task LoadCart()
     {
-        if ((await CartService.GetCartItems()).Count == 0)
+        await CartService.GetCartItemsCount();
+        _cartProducts = await CartService.GetCartProducts();
+        if (_cartProducts == null || _cartProducts.Count == 0)
         {
             _message = "Your cart is empty!";
-            _cartProducts = new List<CartProductResponseDto>();
-        }
-        else
-        {
-            _cartProducts = await CartService.GetCartProducts();
         }
     }
 

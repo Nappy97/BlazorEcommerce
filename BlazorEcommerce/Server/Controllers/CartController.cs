@@ -1,9 +1,4 @@
-﻿using System.Security.Claims;
-using BlazorEcommerce.Shared.Dto;
-using BlazorEcommerce.Shared.Model;
-using BlazorEcommerce.Shared.Model.Internal;
-using BlazorEcommerce.Shared.Response;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace BlazorEcommerce.Server.Controllers;
 
@@ -32,8 +27,22 @@ public class CartController : ControllerBase
     public async Task<ActionResult<ServiceResponse<List<CartProductResponseDto>>>> StoreCartItems(
         List<CartItem> cartItems)
     {
-        var userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
-        var result = await _cartService.StoreCartItems(cartItems, userId);
+        var result = await _cartService.StoreCartItems(cartItems);
+        return Ok(result);
+    }
+
+    // 카트에 담긴 숫자
+    [HttpGet("count")]
+    public async Task<ActionResult<ServiceResponse<int>>> GetCartItemsCount()
+    {
+        return await _cartService.GetCartItemCount();
+    }
+
+    // DB에서 카트 정보 얻어오기
+    [HttpGet]
+    public async Task<ActionResult<ServiceResponse<List<CartProductResponseDto>>>> GetDbCartProducts()
+    {
+        var result = await _cartService.GetDbCartProducts();
         return Ok(result);
     }
 }
