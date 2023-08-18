@@ -12,4 +12,6 @@ public interface IAuthService
 
     // 비밀번호 변경
     Task<ServiceResponse<bool>> ChangePassword(int userId, string newPassword);
+    
+    int GetUserId();
 }

@@ -10,9 +10,11 @@ public partial class Cart
 
     private List<CartProductResponseDto> _cartProducts = null;
     private string _message = "Loading cart...";
+    private bool _isOrderPlaced = false;
 
     protected override async Task OnInitializedAsync()
     {
+        _isOrderPlaced = false;
         await LoadCart();
     }
 
@@ -40,10 +42,12 @@ public partial class Cart
             product.Quantity = 1;
         await CartService.UpdateQuantity(product);
     }
-    
+
     // 장바구니에서 주문하기
     private async Task PlaceOrder()
     {
         await OrderService.PlaceOrder();
+        await CartService.GetCartItemsCount();
+        _isOrderPlaced = true;
     }
 }

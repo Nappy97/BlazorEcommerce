@@ -1,20 +1,15 @@
-﻿using System.Security.Claims;
-
-namespace BlazorEcommerce.Server.Services.CartService;
+﻿namespace BlazorEcommerce.Server.Services.CartService;
 
 public class CartService : ICartService
 {
     private readonly DataContext _context;
-    private readonly IHttpContextAccessor _httpContextAccessor;
+    private readonly IAuthService _authService;
 
-    public CartService(DataContext context, IHttpContextAccessor httpContextAccessor)
+    public CartService(DataContext context, IAuthService authService)
     {
         _context = context;
-        _httpContextAccessor = httpContextAccessor;
+        _authService = authService;
     }
-
-    private int GetUserId() =>
-        int.Parse(_httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier));
 
     // 카트에 담긴것 정보얻기(로컬 스토리지)
     public async Task<ServiceResponse<List<CartProductResponseDto>>> GetCartProducts(List<CartItem> cartItems)
@@ -66,7 +61,7 @@ public class CartService : ICartService
     // 카트에 담긴것 정보얻기(회원)
     public async Task<ServiceResponse<List<CartProductResponseDto>>> StoreCartItems(List<CartItem> cartItems)
     {
-        cartItems.ForEach(cartItem => cartItem.UserId = GetUserId());
+        cartItems.ForEach(cartItem => cartItem.UserId = _authService.GetUserId());
         _context.CartItems.AddRange(cartItems);
         await _context.SaveChangesAsync();
 
@@ -77,7 +72,7 @@ public class CartService : ICartService
     public async Task<ServiceResponse<int>> GetCartItemCount()
     {
         var count = (await _context.CartItems
-            .Where(ci => ci.UserId == GetUserId())
+            .Where(ci => ci.UserId == _authService.GetUserId())
             .ToListAsync()).Count;
         return new ServiceResponse<int> { Data = count };
     }
@@ -87,14 +82,14 @@ public class CartService : ICartService
     {
         return await GetCartProducts(
             await _context.CartItems
-                .Where(ci => ci.UserId == GetUserId())
+                .Where(ci => ci.UserId == _authService.GetUserId())
                 .ToListAsync());
     }
 
     // 카트에 추가
     public async Task<ServiceResponse<bool>> AddToCart(CartItem cartItem)
     {
-        cartItem.UserId = GetUserId();
+        cartItem.UserId = _authService.GetUserId();
 
         var sameItem = await _context.CartItems
             .FirstOrDefaultAsync(ci => ci.ProductId == cartItem.ProductId
@@ -120,7 +115,7 @@ public class CartService : ICartService
         var dbCartItem = await _context.CartItems
             .FirstOrDefaultAsync(ci => ci.ProductId == cartItem.ProductId
                                        && ci.ProductTypeId == cartItem.ProductTypeId
-                                       && ci.UserId == GetUserId());
+                                       && ci.UserId == _authService.GetUserId());
 
         if (dbCartItem == null)
         {
@@ -143,7 +138,7 @@ public class CartService : ICartService
         var dbCartItem = await _context.CartItems
             .FirstOrDefaultAsync(ci => ci.ProductId == productId
                                        && ci.ProductTypeId == productTypeId
-                                       && ci.UserId == GetUserId());
+                                       && ci.UserId == _authService.GetUserId());
 
         if (dbCartItem == null)
         {
