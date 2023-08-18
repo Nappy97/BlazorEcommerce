@@ -25,6 +25,7 @@ public class PaymentController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<ServiceResponse<bool>>> FulfillOrder()
     {
+        // .\stripe.exe listen --forward-to http://localhost:5216/api/payment (cmd창에서)
         var response = await _paymentService.FulfillOrder(Request);
         if (!response.Success)
             return BadRequest(response.Message);

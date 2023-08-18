@@ -1,0 +1,57 @@
+﻿@if (_address == null)
+{
+    <span>You haven't specified a delivery address, yet.</span>
+    <button class="btn" @onclick="InitAddress">
+        Add an address?
+    </button>
+}
+else if (!_editAddress)
+{
+    <p>
+        <span>@_address.Name</span><br/>
+        <span>@_address.Country</span>
+        <span>@_address.Province</span>
+        <span>@_address.City</span>
+        <span>@_address.Gu, @_address.Street, @_address.DetailAddress</span>
+        <span>@_address.Zip</span>
+    </p>
+    <button class="btn btn-primary" @onclick="EditAddress">Edit</button>
+}
+else
+{
+    <EditForm Model="_address" OnSubmit="SubmitAddress">
+        <div class="mb-3">
+            <label for="name">이름</label>
+            <InputText id="name" class="form-control" @bind-Value="_address.Name"/>
+        </div>
+        <div class="mb-3">
+            <label for="country">국가</label>
+            <InputText id="country" class="form-control" @bind-Value="_address.Country"/>
+        </div>
+        <div class="mb-3">
+            <label for="province">도</label>
+            <InputText id="province" class="form-control" @bind-Value="_address.Province"/>
+        </div>
+        <div class="mb-3">
+            <label for="city">City</label>
+            <InputText id="city" class="form-control" @bind-Value="_address.City"/>
+        </div>
+        <div class="mb-3">
+            <label for="gu">구</label>
+            <InputText id="gu" class="form-control" @bind-Value="_address.Gu"/>
+        </div>
+        <div class="mb-3">
+            <label for="street">도로명</label>
+            <InputText id="street" class="form-control" @bind-Value="_address.Street"/>
+        </div>
+        <div class="mb-3">
+            <label for="detailAddress">상세주소</label>
+            <InputText id="detailAddress" class="form-control" @bind-Value="_address.DetailAddress"/>
+        </div>
+        <div class="mb-3">
+            <label for="zip">우편번호</label>
+            <InputText id="zip" class="form-control" @bind-Value="_address.Zip"/>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </EditForm>
+}

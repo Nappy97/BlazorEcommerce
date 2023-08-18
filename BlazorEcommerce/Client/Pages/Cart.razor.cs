@@ -8,14 +8,17 @@ public partial class Cart
     [Inject] private ICartService CartService { get; set; }
     [Inject] private IOrderService OrderService { get; set; }
     [Inject] private NavigationManager NavigationManager { get; set; }
+    [Inject] private IAuthService AuthService { get; set; }
 
     private List<CartProductResponseDto> _cartProducts = null;
     private string _message = "Loading cart...";
     private bool _isOrderPlaced = false;
+    private bool _isAuthenticated = false;
 
     protected override async Task OnInitializedAsync()
     {
         _isOrderPlaced = false;
+        _isAuthenticated = await AuthService.IsUserAuthenticated();
         await LoadCart();
     }
 
