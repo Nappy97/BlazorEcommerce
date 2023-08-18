@@ -2,7 +2,7 @@
 
 namespace BlazorEcommerce.Client.Shared;
 
-public partial class ShopNavMenu
+public partial class ShopNavMenu : IDisposable
 {
     [Inject] private ICategoryService CategoryService { get; set; }
     
@@ -18,5 +18,11 @@ public partial class ShopNavMenu
     protected override async Task OnInitializedAsync()
     {
         await CategoryService.GetCategories();
+        CategoryService.OnChange += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        CategoryService.OnChange -= StateHasChanged;
     }
 }

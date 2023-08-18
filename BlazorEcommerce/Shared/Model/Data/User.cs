@@ -8,5 +8,5 @@ public class User
     public byte[] PasswordSalt { get; set; }
     public DateTime DateCreated { get; set; } = DateTime.Now;
     public Address Address { get; set; }
-    // public int AddressId { get; set; }
+    public string Role { get; set; } = "Customer";
 }

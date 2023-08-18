@@ -1716,3 +1716,6 @@ G:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorE
 G:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\obj\Debug\net7.0\ref\BlazorEcommerce.Client.dll
 D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\obj\Debug\net7.0\scopedcss\Pages\Orders.razor.rz.scp.css
 D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\obj\Debug\net7.0\scopedcss\Pages\OrderDetails.razor.rz.scp.css
+D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\obj\Debug\net7.0\scopedcss\Shared\AdminMenu.razor.rz.scp.css
+D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\obj\Debug\net7.0\scopedcss\Pages\Admin\Categories.razor.rz.scp.css
+D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\obj\Debug\net7.0\scopedcss\Pages\Admin\ProductTypes.razor.rz.scp.css
