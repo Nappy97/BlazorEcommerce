@@ -7,6 +7,7 @@ public partial class Cart
 {
     [Inject] private ICartService CartService { get; set; }
     [Inject] private IOrderService OrderService { get; set; }
+    [Inject] private NavigationManager NavigationManager { get; set; }
 
     private List<CartProductResponseDto> _cartProducts = null;
     private string _message = "Loading cart...";
@@ -46,8 +47,7 @@ public partial class Cart
     // 장바구니에서 주문하기
     private async Task PlaceOrder()
     {
-        await OrderService.PlaceOrder();
-        await CartService.GetCartItemsCount();
-        _isOrderPlaced = true;
+        string url = await OrderService.PlaceOrder();
+        NavigationManager.NavigateTo(url);
     }
 }

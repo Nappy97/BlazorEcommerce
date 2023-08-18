@@ -22,6 +22,9 @@ public class AuthService : IAuthService
     public int GetUserId() =>
         int.Parse(_httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier));
 
+    public string GetUserEmail() =>
+        _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.Name);
+
     public async Task<ServiceResponse<int>> Register(User user, string password)
     {
         if (await UserExists(user.Email))
@@ -142,5 +145,10 @@ public class AuthService : IAuthService
 
         var jwt = new JwtSecurityTokenHandler().WriteToken(token);
         return jwt;
+    }
+    
+    public async Task<User> GetUserByEmail(string email)
+    {
+        return await _context.Users.FirstOrDefaultAsync(u => u.Email.ToLower().Equals(email.ToLower()));
     }
 }

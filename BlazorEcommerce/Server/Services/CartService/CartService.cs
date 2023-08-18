@@ -78,11 +78,12 @@ public class CartService : ICartService
     }
 
     // 카트에 담긴것 정보얻기(회원) from DB
-    public async Task<ServiceResponse<List<CartProductResponseDto>>> GetDbCartProducts()
+    public async Task<ServiceResponse<List<CartProductResponseDto>>> GetDbCartProducts(int? userId = null)
     {
+        userId ??= _authService.GetUserId();
         return await GetCartProducts(
             await _context.CartItems
-                .Where(ci => ci.UserId == _authService.GetUserId())
+                .Where(ci => ci.UserId == userId)
                 .ToListAsync());
     }
 
