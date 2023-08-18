@@ -23,31 +23,30 @@ public class CartService : ICartService
     {
         if (await IsUserAuthenticated())
         {
-            Console.WriteLine("user is authenticated");
+            await _http.PostAsJsonAsync("api/cart/add", cartItem);
         }
         else
         {
-            Console.WriteLine("user us NOT authenticated");
+            var cart = await _localStorage.GetItemAsync<List<CartItem>>("cart");
+            if (cart == null)
+            {
+                cart = new List<CartItem>();
+            }
+
+            var sameItem = cart.Find(x => x.ProductId == cartItem.ProductId
+                                          && x.ProductTypeId == cartItem.ProductTypeId);
+            if (sameItem == null)
+            {
+                cart.Add(cartItem);
+            }
+            else
+            {
+                sameItem.Quantity += cartItem.Quantity;
+            }
+
+            await _localStorage.SetItemAsync("cart", cart);
         }
 
-        var cart = await _localStorage.GetItemAsync<List<CartItem>>("cart");
-        if (cart == null)
-        {
-            cart = new List<CartItem>();
-        }
-
-        var sameItem = cart.Find(x => x.ProductId == cartItem.ProductId
-                                      && x.ProductTypeId == cartItem.ProductTypeId);
-        if (sameItem == null)
-        {
-            cart.Add(cartItem);
-        }
-        else
-        {
-            sameItem.Quantity += cartItem.Quantity;
-        }
-
-        await _localStorage.SetItemAsync("cart", cart);
         await GetCartItemsCount();
     }
 
@@ -87,39 +86,58 @@ public class CartService : ICartService
     // 카트에서 상품제거
     public async Task RemoveProductFromCart(int productId, int productTypeId)
     {
-        var cart = await _localStorage.GetItemAsync<List<CartItem>>("cart");
-        if (cart == null)
+        if (await IsUserAuthenticated())
         {
-            return;
+            await _http.DeleteAsync($"api/cart/{productId}/{productTypeId}");
         }
-
-        var cartItem = cart.Find(x => x.ProductId == productId
-                                      && x.ProductTypeId == productTypeId);
-
-        if (cartItem != null)
+        else
         {
-            cart.Remove(cartItem);
-            await _localStorage.SetItemAsync("cart", cart);
-            await GetCartItemsCount();
+            var cart = await _localStorage.GetItemAsync<List<CartItem>>("cart");
+            if (cart == null)
+            {
+                return;
+            }
+
+            var cartItem = cart.Find(x => x.ProductId == productId
+                                          && x.ProductTypeId == productTypeId);
+
+            if (cartItem != null)
+            {
+                cart.Remove(cartItem);
+                await _localStorage.SetItemAsync("cart", cart);
+            }
         }
     }
 
     // 같은 상품일 경우 개수로 변경
     public async Task UpdateQuantity(CartProductResponseDto product)
     {
-        var cart = await _localStorage.GetItemAsync<List<CartItem>>("cart");
-        if (cart == null)
+        if (await IsUserAuthenticated())
         {
-            return;
+            var request = new CartItem
+            {
+                ProductId = product.ProductId,
+                Quantity = product.Quantity,
+                ProductTypeId = product.ProductTypeId
+            };
+            await _http.PutAsJsonAsync("api/cart/update-quantity", request);
         }
-
-        var cartItem = cart.Find(x => x.ProductId == product.ProductId
-                                      && x.ProductTypeId == product.ProductTypeId);
-
-        if (cartItem != null)
+        else
         {
-            cartItem.Quantity = product.Quantity;
-            await _localStorage.SetItemAsync("cart", cart);
+            var cart = await _localStorage.GetItemAsync<List<CartItem>>("cart");
+            if (cart == null)
+            {
+                return;
+            }
+
+            var cartItem = cart.Find(x => x.ProductId == product.ProductId
+                                          && x.ProductTypeId == product.ProductTypeId);
+
+            if (cartItem != null)
+            {
+                cartItem.Quantity = product.Quantity;
+                await _localStorage.SetItemAsync("cart", cart);
+            }
         }
     }
 

@@ -6,6 +6,7 @@ namespace BlazorEcommerce.Client.Pages;
 public partial class Cart
 {
     [Inject] private ICartService CartService { get; set; }
+    [Inject] private IOrderService OrderService { get; set; }
 
     private List<CartProductResponseDto> _cartProducts = null;
     private string _message = "Loading cart...";
@@ -38,5 +39,11 @@ public partial class Cart
         if (product.Quantity < 1)
             product.Quantity = 1;
         await CartService.UpdateQuantity(product);
+    }
+    
+    // 장바구니에서 주문하기
+    private async Task PlaceOrder()
+    {
+        await OrderService.PlaceOrder();
     }
 }

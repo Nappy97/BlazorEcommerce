@@ -13,7 +13,7 @@ public class CartService : ICartService
         _httpContextAccessor = httpContextAccessor;
     }
 
-    private int GetUserId() => 
+    private int GetUserId() =>
         int.Parse(_httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier));
 
     // 카트에 담긴것 정보얻기(로컬 스토리지)
@@ -89,5 +89,74 @@ public class CartService : ICartService
             await _context.CartItems
                 .Where(ci => ci.UserId == GetUserId())
                 .ToListAsync());
+    }
+
+    // 카트에 추가
+    public async Task<ServiceResponse<bool>> AddToCart(CartItem cartItem)
+    {
+        cartItem.UserId = GetUserId();
+
+        var sameItem = await _context.CartItems
+            .FirstOrDefaultAsync(ci => ci.ProductId == cartItem.ProductId
+                                       && ci.ProductTypeId == cartItem.ProductTypeId
+                                       && ci.UserId == cartItem.UserId);
+        if (sameItem == null)
+        {
+            _context.CartItems.Add(cartItem);
+        }
+        else
+        {
+            sameItem.Quantity += cartItem.Quantity;
+        }
+
+        await _context.SaveChangesAsync();
+
+        return new ServiceResponse<bool> { Data = true };
+    }
+
+    // 수량변경
+    public async Task<ServiceResponse<bool>> UpdateQuantity(CartItem cartItem)
+    {
+        var dbCartItem = await _context.CartItems
+            .FirstOrDefaultAsync(ci => ci.ProductId == cartItem.ProductId
+                                       && ci.ProductTypeId == cartItem.ProductTypeId
+                                       && ci.UserId == GetUserId());
+
+        if (dbCartItem == null)
+        {
+            return new ServiceResponse<bool>
+            {
+                Data = false,
+                Message = "카트에 해당 상품이 없습니다."
+            };
+        }
+
+        dbCartItem.Quantity = cartItem.Quantity;
+        await _context.SaveChangesAsync();
+
+        return new ServiceResponse<bool> { Data = true };
+    }
+
+    // 카트에서 상품제거
+    public async Task<ServiceResponse<bool>> RemoveItemFromCart(int productId, int productTypeId)
+    {
+        var dbCartItem = await _context.CartItems
+            .FirstOrDefaultAsync(ci => ci.ProductId == productId
+                                       && ci.ProductTypeId == productTypeId
+                                       && ci.UserId == GetUserId());
+
+        if (dbCartItem == null)
+        {
+            return new ServiceResponse<bool>
+            {
+                Data = false,
+                Message = "카트에 해당 상품이 없습니다."
+            };
+        }
+
+        _context.CartItems.Remove(dbCartItem);
+        await _context.SaveChangesAsync();
+
+        return new ServiceResponse<bool> { Data = true };
     }
 }
