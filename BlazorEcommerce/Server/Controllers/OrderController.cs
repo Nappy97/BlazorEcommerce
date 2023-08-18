@@ -28,4 +28,12 @@ public class OrderController : ControllerBase
         var result = await _orderService.GetOrders();
         return Ok(result);
     }
+    
+    // 주문 상세정보 가져오기
+    [HttpGet("{orderId:int}")]
+    public async Task<ServiceResponse<OrderDetailsResponseDto>> GetOrdersDetails(int orderId)
+    {
+        var result = await _orderService.GetOrderDetails(orderId);
+        return result;
+    }
 }

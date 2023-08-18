@@ -7,4 +7,7 @@ public interface IOrderService
     
     // 주문목록을 가져옵니다.
     Task<ServiceResponse<List<OrderOverviewResponseDto>>> GetOrders();
+    
+    // 주문 상세정보를 가져옵니다.
+    Task<ServiceResponse<OrderDetailsResponseDto>> GetOrderDetails(int orderId);
 }

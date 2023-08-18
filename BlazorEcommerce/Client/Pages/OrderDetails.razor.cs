@@ -2,14 +2,16 @@
 
 namespace BlazorEcommerce.Client.Pages;
 
-public partial class Orders
+public partial class OrderDetails
 {
     [Inject] IOrderService OrderService { get; set; }
+    
+    [Parameter] public int OrderId { get; set; }
 
-    private List<OrderOverviewResponseDto> _orders = null;
-
+    private OrderDetailsResponseDto _order = null;
+    
     protected override async Task OnInitializedAsync()
     {
-        _orders = await OrderService.GetOrders();
+        _order = await OrderService.GetOrderDetails(OrderId);
     }
 }

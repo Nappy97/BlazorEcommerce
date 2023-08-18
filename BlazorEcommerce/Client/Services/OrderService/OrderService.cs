@@ -30,9 +30,16 @@ public class OrderService : IOrderService
     }
 
     // 주문 목록 가져오기
-    public async Task<List<OrderOverviewResponseDto>> getOrders()
+    public async Task<List<OrderOverviewResponseDto>> GetOrders()
     {
         var result = await _http.GetFromJsonAsync<ServiceResponse<List<OrderOverviewResponseDto>>>("api/order");
+        return result.Data;
+    }
+
+    // 주문 상세 정보 가져오기
+    public async Task<OrderDetailsResponseDto> GetOrderDetails(int orderId)
+    {
+        var result = await _http.GetFromJsonAsync<ServiceResponse<OrderDetailsResponseDto>>($"api/order/{orderId}");
         return result.Data;
     }
 

@@ -3,10 +3,12 @@
 public class AuthService : IAuthService
 {
     private readonly HttpClient _http;
+    private readonly AuthenticationStateProvider _authenticationStateProvider;
 
-    public AuthService(HttpClient http)
+    public AuthService(HttpClient http, AuthenticationStateProvider authenticationStateProvider)
     {
         _http = http;
+        _authenticationStateProvider = authenticationStateProvider;
     }
     
     // 회원가입
@@ -28,5 +30,12 @@ public class AuthService : IAuthService
     {
         var result = await _http.PostAsJsonAsync("api/auth/change-password", request.Password);
         return await result.Content.ReadFromJsonAsync<ServiceResponse<bool>>();
+    }
+
+    // 유저가 인증되었는지 확인하는 메서드
+    public async Task<bool> IsUserAuthenticated()
+    {
+        return (await _authenticationStateProvider.GetAuthenticationStateAsync())
+            .User.Identity.IsAuthenticated;
     }
 }

@@ -1715,3 +1715,4 @@ G:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorE
 G:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\obj\Debug\net7.0\BlazorEcommerce.Client.pdb
 G:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\obj\Debug\net7.0\ref\BlazorEcommerce.Client.dll
 D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\obj\Debug\net7.0\scopedcss\Pages\Orders.razor.rz.scp.css
+D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\obj\Debug\net7.0\scopedcss\Pages\OrderDetails.razor.rz.scp.css

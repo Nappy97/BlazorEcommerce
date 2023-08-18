@@ -77,4 +77,47 @@ public class OrderService : IOrderService
 
         return response;
     }
+
+    // 주문 상세정보를 가져옵니다.
+    public async Task<ServiceResponse<OrderDetailsResponseDto>> GetOrderDetails(int orderId)
+    {
+        var response = new ServiceResponse<OrderDetailsResponseDto>();
+        var order = await _context.Orders
+            .Include(o => o.OrderItems)
+            .ThenInclude(oi => oi.Product)
+            .Include(o => o.OrderItems)
+            .ThenInclude(oi => oi.ProductType)
+            .Where(o => o.UserId == _authService.GetUserId() && o.Id == orderId)
+            .OrderByDescending(o => o.OrderDate)
+            .FirstOrDefaultAsync();
+
+        if (order == null)
+        {
+            response.Success = false;
+            response.Message = "Order not found.";
+            return response;
+        }
+
+        var orderDetailsResponse = new OrderDetailsResponseDto
+        {
+            OrderDate = order.OrderDate,
+            TotalPrice = order.TotalPrice,
+            Products = new List<OrderDetailsProductResponseDto>()
+        };
+
+        order.OrderItems.ForEach(item =>
+            orderDetailsResponse.Products.Add(new OrderDetailsProductResponseDto
+            {
+                ProductId = item.ProductId,
+                ImageUrl = item.Product.ImageUrl,
+                ProductType = item.ProductType.Name,
+                Quantity = item.Quantity,
+                Title = item.Product.Title,
+                TotalPrice = item.TotalPrice
+            }));
+
+        response.Data = orderDetailsResponse;
+        
+        return response;
+    }
 }
