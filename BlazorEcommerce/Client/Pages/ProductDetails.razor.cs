@@ -2,6 +2,7 @@
 using BlazorEcommerce.Shared.Model;
 using BlazorEcommerce.Shared.Model.Internal;
 using Microsoft.AspNetCore.Components;
+using MudBlazor;
 
 namespace BlazorEcommerce.Client.Pages;
 

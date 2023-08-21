@@ -1,6 +1,8 @@
 ﻿using BlazorEcommerce.Shared.Model;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.JSInterop;
+using MudBlazor;
 
 namespace BlazorEcommerce.Client.Pages.Admin;
 
@@ -92,11 +94,33 @@ public partial class EditProduct
     {
         // 한번 더 확인
         bool confirmed = await JsRuntime.InvokeAsync<bool>("confirm", $"진짜로 '{_product.Title}'을 삭제하시겠습니까?");
-        
-        if (!confirmed) 
+
+        if (!confirmed)
             return;
-        
+
         await ProductService.DeleteProduct(_product);
         NavigationManager.NavigateTo("admin/products");
+    }
+
+    async Task OnFileChange(InputFileChangeEventArgs e)
+    {
+        var format = "image/png";
+        foreach (var image in e.GetMultipleFiles(int.MaxValue))
+        {
+            var resizedImage = await image.RequestImageFileAsync(format, 200, 200);
+            var buffer = new byte[resizedImage.Size];
+            await resizedImage.OpenReadStream().ReadAsync(buffer);
+            var imageData = $"data:{format};base64,{Convert.ToBase64String(buffer)}";
+            _product.Images.Add(new Image { Data = imageData });
+        }
+    }
+    
+    void RemoveImage(int id)
+    {
+        var image = _product.Images.FirstOrDefault(i => i.Id == id);
+        if (image != null)
+        {
+            _product.Images.Remove(image);
+        }
     }
 }

@@ -1721,3 +1721,15 @@ D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorE
 D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\obj\Debug\net7.0\scopedcss\Pages\Admin\ProductTypes.razor.rz.scp.css
 D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\obj\Debug\net7.0\scopedcss\Pages\Admin\Products.razor.rz.scp.css
 D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\obj\Debug\net7.0\scopedcss\Pages\Admin\EditProduct.razor.rz.scp.css
+D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\bin\Debug\net7.0\wwwroot\_framework\Microsoft.Extensions.Localization.Abstractions.dll
+D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\bin\Debug\net7.0\wwwroot\_framework\Microsoft.Extensions.Localization.dll
+D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\bin\Debug\net7.0\wwwroot\_framework\MudBlazor.dll
+D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\bin\Debug\net7.0\wwwroot\_framework\MudBlazor.dll.gz
+D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\bin\Debug\net7.0\wwwroot\_framework\Microsoft.Extensions.Localization.Abstractions.dll.gz
+D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\bin\Debug\net7.0\wwwroot\_framework\Microsoft.Extensions.Localization.dll.gz
+D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\bin\Debug\net7.0\Microsoft.Extensions.Localization.dll
+D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\bin\Debug\net7.0\Microsoft.Extensions.Localization.Abstractions.dll
+D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\bin\Debug\net7.0\MudBlazor.dll
+D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\obj\Debug\net7.0\build-gz\RFKSR7tV.gz
+D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\obj\Debug\net7.0\build-gz\d+nmywPY.gz
+D:\side_project\Csharp\BlazorWebAssembly\BlazorEcommerce\BlazorEcommerce\BlazorEcommerce\Client\obj\Debug\net7.0\build-gz\4V7j1q8l.gz
