@@ -1,9 +1,4 @@
-﻿using BlazorEcommerce.Shared.Dto;
-using BlazorEcommerce.Shared.Model;
-using BlazorEcommerce.Shared.Model.Data;
-using BlazorEcommerce.Shared.Response;
-
-namespace BlazorEcommerce.Server.Services.ProductService;
+﻿namespace BlazorEcommerce.Server.Services.ProductService;
 
 public interface IProductService
 {
@@ -18,4 +13,11 @@ public interface IProductService
     Task<ServiceResponse<List<string>>> GetProductSearchSuggestions(string searchText);
     
     Task<ServiceResponse<List<Product>>> GetFeaturedProducts();
+    
+    Task<ServiceResponse<List<Product>>> GetAdminProducts();
+    
+    Task<ServiceResponse<Product>> CreateProduct(Product product);
+    
+    Task<ServiceResponse<Product>> UpdateProduct(Product product);
+    Task<ServiceResponse<bool>> DeleteProduct(int productId);
 }
